@@ -15,7 +15,13 @@ def text(user_option, auto_option):
     print(f'Computador eligio {choice(auto_option)}')
     
 def user_input():
-    user_option = int(input('1 para piedra, 2 para papel o 3 para tijera => '))
+    flag = False
+    while flag == False:
+        user_option = input('1 para piedra, 2 para papel o 3 para tijera => ')
+        if (user_option.isdigit()) : 
+            user_option = int(user_option)
+            break
+        print("Solo usa 1, 2, 3 como respuesta!")
     return user_option
 
 def pc_option():
